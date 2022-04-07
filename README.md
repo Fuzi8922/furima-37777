@@ -19,7 +19,7 @@
 |price|integer|null: false|
 |category|string|null: false|
 |condition|string|null: false|
-|area|string|null: false|
+|prefecture|string|null: false|
 |estimated_shipping|string|null: false|
 |user|references|null: false, foreign key: true|
 |shipping_cost|integer|null: false|
