@@ -51,7 +51,7 @@
 |address|string|null: false|
 |building_address|string||
 |phone_number|string|null: false|
-|user|references|null: false, foreign key: true|
+|purchase_record|references|null: false, foreign key: true|
 
 ### Association
 * belongs_to purchases_record
