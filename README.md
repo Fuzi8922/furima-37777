@@ -1,4 +1,6 @@
 ## usersテーブル
+* has many items
+* has many purchases
 
 |Column|Type|Options|
 |------|----|-------|
@@ -12,6 +14,9 @@
 |birthday|date|null: false|
 
 ## itemsテーブル
+* has one purchases_record
+* belongs to users
+
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -26,12 +31,18 @@
 <!-- imageはimagemagickで追加 -->
 
 ## purchase_recordsテーブル
+* has one address
+* belongs to users
+* belongs to items
+
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign key: true|
 |item|references|null: false, foreign key: true|
 
 ## addressesテーブル
+* belongs to purchases_records
+
 |Column|Type|Options|
 |------|----|-------|
 |post_code|string|null: false|
