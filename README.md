@@ -22,7 +22,7 @@
 |price|integer|null: false|
 |category|string|null: false|
 |condition|string|null: false|
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |estimated_shipping|string|null: false|
 |user|references|null: false, foreign key: true|
 |shipping_cost|integer|null: false|
@@ -46,7 +46,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |post_code|string|null: false|
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |municipalities|string|null: false|
 |address|string|null: false|
 |building_address|string||
