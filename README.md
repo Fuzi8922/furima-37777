@@ -1,24 +1,42 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|not null|
+|email|string|not null,unique|
+|password|string|not null|
+|first_name|string|not null|
+|last_name|string|not null|
+|birthday|integer|not null|
 
-Things you may want to cover:
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|not null|
+|explanation|text|not null|
+|price|integer|not null|
+|category|string|not null|
+|condition|string|not null|
+|area|string|not null|
+|estimated_shipping|string|not null|
+|user|references|not null, foreign key|
+|shipping_cost|integer|not null|
+<!-- imageはimagemagickで追加 -->
 
-* Ruby version
+## purchase_recordsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card_number|integer|not null|
+|expiration_date|integer|not null|
+|user|references|not null, foreign key|
+|item|references|not null, foreign key|
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_code|integer|not null|
+|prefecture|string|not null|
+|municipalities|string|not null|
+|address|string|not null|
+|building_address|string||
+|phone_number|string|not null|
