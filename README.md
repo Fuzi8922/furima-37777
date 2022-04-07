@@ -28,8 +28,6 @@
 ## purchase_recordsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
-|expiration_date|integer|null: false|
 |user|references|null: false, foreign key: true|
 |item|references|null: false, foreign key: true|
 
