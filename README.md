@@ -11,8 +11,8 @@
 |birthday|date|null: false|
 
 ### Association
-* has_many items
-* has_many purchases
+* has_many :items
+* has_many :purchases
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -28,8 +28,8 @@
 |shipping_cost_id|integer|null: false|
 
 ### Association
-* has_one purchases_record
-* belongs_to user
+* has_one :purchases_record
+* belongs_to :user
 
 ## purchase_recordsテーブル
 |Column|Type|Options|
@@ -38,9 +38,9 @@
 |item|references|null: false, foreign key: true|
 
 ### Association
-* has_one address
-* belongs_to user
-* belongs_to item
+* has_one :address
+* belongs_to :user
+* belongs_to :item
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -54,4 +54,4 @@
 |purchase_record|references|null: false, foreign key: true|
 
 ### Association
-* belongs_to purchases_record
+* belongs_to :purchases_record
