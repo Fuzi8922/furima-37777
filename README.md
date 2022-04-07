@@ -12,7 +12,7 @@
 
 ### Association
 * has_many :items
-* has_many :purchases
+* has_many :purchase_records
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -54,4 +54,4 @@
 |purchase_record|references|null: false, foreign key: true|
 
 ### Association
-* belongs_to :purchases_record
+* belongs_to :purchase_record
