@@ -20,12 +20,12 @@
 |name|string|null: false|
 |explanation|text|null: false|
 |price|integer|null: false|
-|category|string|null: false|
-|condition|string|null: false|
+|category_id|integer|null: false|
+|condition_id|integer|null: false|
 |prefecture_id|integer|null: false|
-|estimated_shipping|string|null: false|
+|estimated_shipping_id|integer|null: false|
 |user|references|null: false, foreign key: true|
-|shipping_cost|integer|null: false|
+|shipping_cost_id|integer|null: false|
 
 ### Association
 * has_one purchases_record
