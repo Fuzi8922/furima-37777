@@ -2,41 +2,41 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|not null|
-|email|string|not null,unique|
-|password|string|not null|
-|first_name|string|not null|
-|last_name|string|not null|
-|birthday|integer|not null|
+|nickname|string|null: false|
+|email|string|null: false,unique: true|
+|password|string|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|birthday|integer|null: false|
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|not null|
-|explanation|text|not null|
-|price|integer|not null|
-|category|string|not null|
-|condition|string|not null|
-|area|string|not null|
-|estimated_shipping|string|not null|
-|user|references|not null, foreign key|
-|shipping_cost|integer|not null|
+|name|string|null: false|
+|explanation|text|null: false|
+|price|integer|null: false|
+|category|string|null: false|
+|condition|string|null: false|
+|area|string|null: false|
+|estimated_shipping|string|null: false|
+|user|references|null: false, foreign key: true|
+|shipping_cost|integer|null: false|
 <!-- imageはimagemagickで追加 -->
 
 ## purchase_recordsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|not null|
-|expiration_date|integer|not null|
-|user|references|not null, foreign key|
-|item|references|not null, foreign key|
+|card_number|integer|null: false|
+|expiration_date|integer|null: false|
+|user|references|null: false, foreign key: true|
+|item|references|null: false, foreign key: true|
 
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_code|integer|not null|
-|prefecture|string|not null|
-|municipalities|string|not null|
-|address|string|not null|
+|post_code|integer|null: false|
+|prefecture|string|null: false|
+|municipalities|string|null: false|
+|address|string|null: false|
 |building_address|string||
-|phone_number|string|not null|
+|phone_number|string|null: false|
