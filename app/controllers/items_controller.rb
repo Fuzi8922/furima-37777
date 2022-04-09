@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to :index
+      redirect_to action: :index
     else
       render :new
     end
@@ -20,7 +20,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(
-      :name, :explanation,:image, :price, :category_id, :condition_id, :prefecture_id, :estimated_shipping_id, :user_id, :shipping_cost_id)
+      :name, :explanation,:image, :price, :category_id, :condition_id, :prefecture_id, :estimated_shipping_id, :user_id, :shipping_cost_id).merge(
+        user_id: current_user.id
+      )
   end
 
 end
