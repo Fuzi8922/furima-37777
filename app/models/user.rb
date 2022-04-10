@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+
   validates_format_of :birthday, with: /\A\d{4}-\d{2}-\d{2}\z/
 
   with_options presence: true do
