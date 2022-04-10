@@ -21,7 +21,7 @@ class Item < ApplicationRecord
     validates :estimated_shipping_id
   end
 
-  with_options format: { with: /\A[0-9]+\z/ }, numericality: { other_than: 1, message: "can't be blank" } do
+  with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :category_id
     validates :condition_id
     validates :shipping_cost_id
@@ -29,5 +29,5 @@ class Item < ApplicationRecord
     validates :estimated_shipping_id
   end
 
-  validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { in: 300..9_999_999, only_integer: true }
+  validates :price, numericality: { in: 300..9_999_999, only_integer: true }
 end
