@@ -12,7 +12,7 @@
 
 ### Association
 * has_many :items
-* has_many :purchase_records
+* has_many :orders
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -28,10 +28,10 @@
 |shipping_cost_id|integer|null: false|
 
 ### Association
-* has_one :purchases_record
+* has_one :order
 * belongs_to :user
 
-## purchase_recordsテーブル
+## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign key: true|
@@ -51,7 +51,7 @@
 |address|string|null: false|
 |building_address|string||
 |phone_number|string|null: false|
-|purchase_record|references|null: false, foreign key: true|
+|order|references|null: false, foreign key: true|
 
 ### Association
-* belongs_to :purchase_record
+* belongs_to :order
