@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
+    @order = OrderAddress.new
   end
 
   def new
@@ -14,7 +15,9 @@ class OrdersController < ApplicationController
       @order_address.save
       return redirect_to root_path
     else
-      render 'index'
+      @item = Item.find(params[:item_id])
+      @order = @order_address
+      render :index
     end
   end
 
@@ -23,8 +26,7 @@ class OrdersController < ApplicationController
   def order_params
     params.permit(
       :post_code, :prefecture_id, :municipalities, :address, :building_address, :phone_number, :item_id, :user_id).merge(
-        token: params[:token]
-      )
+        token: params[:token])
   end
 
 end
