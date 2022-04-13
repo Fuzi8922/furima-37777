@@ -4,8 +4,8 @@ class OrdersController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
-    if @item.user_id != current_user.id
-      @order_address = OrderAddress.new
+    if @item.order == nil && (@item.user_id != current_user.id)
+        @order_address = OrderAddress.new
     else
       redirect_to items_path
     end
