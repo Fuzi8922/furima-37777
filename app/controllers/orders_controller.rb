@@ -49,5 +49,4 @@ class OrdersController < ApplicationController
   def item_identify
     @item = Item.find(params[:item_id])
   end
-
 end
