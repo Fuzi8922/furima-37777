@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
+  before_action :item_identify, only: [:index, :create]
 
   def index
-    item_identify
     if @item.order.nil? && (@item.user_id != current_user.id)
       @order_address = OrderAddress.new
     else
@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
         @order_address.save
         redirect_to root_path
       else
-        item_identify
         render :index
       end
     else
